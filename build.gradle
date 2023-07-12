@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.smartsense'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation 'org.keycloak:keycloak-core:21.1.2'
+    compileOnly 'org.keycloak:keycloak-server-spi:21.1.2'
+    compileOnly 'org.keycloak:keycloak-server-spi-private:21.1.2'
+    compileOnly 'org.keycloak:keycloak-services:21.1.2'
+}
+
+test {
+    useJUnitPlatform()
+}
