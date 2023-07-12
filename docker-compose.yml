@@ -1,0 +1,71 @@
+version: "3.3"
+
+services:
+  postgres:
+    image: postgres:13.2
+    restart: unless-stopped
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: keycloak
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+    networks:
+      - local-keycloak
+
+  mailhog-keycloak:
+    image: mailhog/mailhog
+    container_name: mailhog
+    logging:
+      driver: "none"
+    ports:
+      - 1025:1025 # smtp server
+      - 8025:8025 # web ui
+    networks:
+      - local-keycloak
+
+  keycloak:
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://http://0.0.0.0:28080/auth/"]
+      interval: 5s
+      timeout: 2s
+      retries: 15
+    pid: "host"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.50"
+          memory: "512M"
+        reservations:
+          cpus: "0.25"
+          memory: "128M"
+    depends_on:
+      - postgres
+    container_name: local_keycloak
+    volumes:
+      - keycloak-data:/opt/keycloak/data/
+      - /home/deepak/sm-prj/keenly-keycloak/keenlyco:/opt/keycloak/themes/keenlyco
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+      DB_VENDOR: postgres
+      DB_ADDR: postgres
+      DB_DATABASE: keycloak
+      DB_USER: admin
+      DB_PASSWORD: admin
+    image: quay.io/keycloak/keycloak:20.0.3
+    entrypoint: ["/opt/keycloak/bin/kc.sh", "start-dev"]
+    ports:
+      - "28080:8080"
+    restart: unless-stopped
+    networks:
+      - local-keycloak
+
+networks:
+  local-keycloak:
+volumes:
+  keycloak-data:
+  db-data:
+# this docker file is for testing the theme
+# to run this fire the below command
+#  docker-compose up
