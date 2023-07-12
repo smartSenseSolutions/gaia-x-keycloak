@@ -65,8 +65,7 @@ public class ActionTokenProvider implements RealmResourceProvider {
           uriInfo
         );
 
-        System.out.println("Ok" + input.userId());
-        return Response.ok(token).build();
+        return Response.ok(new TokenResponse(token)).build();
     }
 
     private AuthenticationManager.AuthResult checkAuth() {
