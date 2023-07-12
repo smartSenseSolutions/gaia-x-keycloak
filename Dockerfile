@@ -1,5 +1,6 @@
 FROM quay.io/keycloak/keycloak:22.0.0
-ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start"]
+ADD build/libs/gaia-x-keycloak-1.0-SNAPSHOT.jar /opt/keycloak/providers/
+ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start-dev"]
 EXPOSE 8080
 
 
