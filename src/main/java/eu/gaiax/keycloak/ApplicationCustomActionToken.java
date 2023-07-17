@@ -11,7 +11,7 @@ public class ApplicationCustomActionToken extends DefaultActionToken {
     public static final String TOKEN_TYPE = "execute-actions";
 
     private static final String JSON_FIELD_REQUIRED_ACTIONS = "rqac";
-    private static final String JSON_FIELD_REDIRECT_URL = "redirectUrl";
+    private static final String JSON_FIELD_REDIRECT_URL = "reduri";
 
     @JsonProperty(value = JSON_FIELD_REQUIRED_ACTIONS)
     private List<String> rqac;
