@@ -1,11 +1,11 @@
-version: "3.3"
+version: "3.9"
 
 services:
   postgres:
-    image: postgres:13.2
+    image: postgres:15.2
     restart: unless-stopped
     volumes:
-      - db-data:/var/lib/postgresql/data
+      - db-data:/var/lib/postgresql15/data
     environment:
       POSTGRES_DB: keycloak
       POSTGRES_USER: admin
@@ -44,7 +44,7 @@ services:
     container_name: local_keycloak
     volumes:
       - keycloak-data:/opt/keycloak/data/
-      - /home/deepak/sm-prj/keenly-keycloak/keenlyco:/opt/keycloak/themes/keenlyco
+      - /home/hasmukh/projects/keycloak/gaia-x-keycloak/themes/gaiax:/opt/keycloak/themes/gaiax
     environment:
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
@@ -53,7 +53,7 @@ services:
       DB_DATABASE: keycloak
       DB_USER: admin
       DB_PASSWORD: admin
-    image: quay.io/keycloak/keycloak:20.0.3
+    image: quay.io/keycloak/keycloak:22.0.1
     entrypoint: ["/opt/keycloak/bin/kc.sh", "start-dev"]
     ports:
       - "28080:8080"
