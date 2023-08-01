@@ -1,4 +1,5 @@
 FROM quay.io/keycloak/keycloak:22.0.0
+COPY ./themes/gaiax/ /opt/keycloak/themes/gaiax/
 ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start"]
 EXPOSE 8080
 
