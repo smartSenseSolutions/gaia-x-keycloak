@@ -26,7 +26,7 @@ services:
 
   keycloak:
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://http://0.0.0.0:28080/auth/"]
+      test: ["CMD", "curl", "-f", "http://http://0.0.0.0:8080/auth/"]
       interval: 5s
       timeout: 2s
       retries: 15
@@ -56,7 +56,7 @@ services:
     image: quay.io/keycloak/keycloak:22.0.1
     entrypoint: ["/opt/keycloak/bin/kc.sh", "start-dev"]
     ports:
-      - "28080:8080"
+      - "8080:8080"
     restart: unless-stopped
     networks:
       - local-keycloak
