@@ -352,7 +352,7 @@ a {
         position: relative;
         width: 48rem; }
         .layout-main__bottom .steper-container ul li::before {
-          content: 'Step 2';
+          content: "Step 2";
           position: absolute;
           color: #ececec;
           left: -0.1rem;
@@ -361,16 +361,16 @@ a {
           line-height: normal;
           top: 3.8rem; }
         .layout-main__bottom .steper-container ul li::after {
-          content: '';
+          content: "";
           position: absolute;
           border: 1px solid #d9dada;
           top: 1.4rem;
           width: 90%;
           left: 3.7rem; }
         .layout-main__bottom .steper-container ul li:first-child::before {
-          content: 'Step 1'; }
+          content: "Step 1"; }
         .layout-main__bottom .steper-container ul li:last-child::before {
-          content: 'Step 3'; }
+          content: "Step 3"; }
         .layout-main__bottom .steper-container ul li:last-child::after {
           content: none; }
   .layout-main__bottom .cards-container {
@@ -382,7 +382,7 @@ a {
       background-color: #fff;
       border-radius: 0.8rem;
       box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.15);
-      padding: 4rem 5rem; }
+      padding: 4rem 3.7rem; }
       .layout-main__bottom .cards-container .card-layout h3,
       .layout-main__bottom .cards-container .card-layout h1 {
         color: #000;
@@ -398,7 +398,8 @@ a {
       .layout-main__bottom .cards-container .card-layout .proceed-link {
         text-align: center;
         margin-top: 5rem; }
-        .layout-main__bottom .cards-container .card-layout .proceed-link a {
+        .layout-main__bottom .cards-container .card-layout .proceed-link a,
+        .layout-main__bottom .cards-container .card-layout .proceed-link span {
           display: inline-block;
           color: #465aff;
           font-size: 1.8rem;
@@ -406,6 +407,18 @@ a {
           font-weight: 400;
           line-height: normal;
           text-align: center; }
+        .layout-main__bottom .cards-container .card-layout .proceed-link span {
+          color: #63be38; }
+    .layout-main__bottom .cards-container .lock-screen {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2.7rem; }
+      .layout-main__bottom .cards-container .lock-screen p {
+        font-size: 2rem;
+        font-weight: 600;
+        width: 20.5rem; }
 
 .template-header {
   position: relative;

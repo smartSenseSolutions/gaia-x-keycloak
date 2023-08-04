@@ -23,7 +23,6 @@
         </div>
 
         <div class="cards-container">
-            <div class="card-layout"></div>
             <div class="card-layout">
                 <@layout.registrationLayout displayMessage=false; section>
                     <#if section = "header">
@@ -49,7 +48,16 @@
                     </#if>
                 </@layout.registrationLayout>
             </div>
-            <div class="card-layout"></div>
+
+            <div class="card-layout lock-screen">
+                <img src="${url.resourcesPath}/images/lock.png" alt="" />
+                <p>Unlock <br/> by completing the steps</p>
+            </div>
+
+            <div class="card-layout lock-screen">
+                <img src="${url.resourcesPath}/images/lock.png" alt="" />
+                <p>Unlock <br/> by completing the steps</p>
+            </div>
         </div>
     </div>
 </div>

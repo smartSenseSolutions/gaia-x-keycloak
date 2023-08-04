@@ -25,7 +25,13 @@
         </div>
 
         <div class="cards-container">
-            <div class="card-layout"></div>
+            <div class="card-layout">
+                <h1>Webauthn Register Passwordless</h1>
+                <p>Please start the webauthn registeration process by clicking on the Proceed button </p>
+                <div class="proceed-link">
+                    <span>Completed</span>
+                </div>
+            </div>
             <div class="card-layout">
                 <@layout.registrationLayout; section>
                     <#if section = "title">
@@ -219,7 +225,10 @@
                     </#if>
                 </@layout.registrationLayout>
             </div>
-            <div class="card-layout"></div>
+            <div class="card-layout lock-screen">
+                <img src="${url.resourcesPath}/images/lock.png" alt="" />
+                <p>Unlock <br/> by completing the steps</p>
+            </div>
         </div>
     </div>
 </div>
