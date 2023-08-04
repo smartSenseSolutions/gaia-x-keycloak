@@ -3,40 +3,39 @@
   z-index: 99;
 }
 
-.info-section,
-.register-step-one {
-  border-radius: 0.8rem;
-  background: $white;
-  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.15);
-  width: 42rem;
-  padding: 4rem 5rem;
-
-  h3 {
-    color: #000;
-    font-size: 2rem;
-    font-weight: 600;
-    line-height: normal;
-    margin-bottom: 3rem;
-  }
-
-  p {
-    color: #000;
-    font-size: 1.8rem;
-    font-weight: 300;
-    line-height: normal;
-  }
-
-  .proceed-link {
+.webauthn-register {
+  h1 {
     text-align: center;
-    margin-top: 5rem;
-    a {
-        display: inline-block;
-        color: #465aff;
-        font-size: 1.8rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        text-align: center;
+  }
+
+  #kc-content-wrapper {
+    text-align: center;
+
+    form {
+      text-align: left;
+
+      .checkbox {
+        label {
+          display: flex;
+          align-items: center;
+          gap: 0.8rem;
+          color: #000;
+          font-size: 1.8rem;
+          font-weight: 300;
+          line-height: normal;
+        }
       }
+    }
+
+    #registerWebAuthn {
+      color: #465aff;
+      font-size: 1.8rem;
+      font-weight: 400;
+      text-align: center;
+      background-color: transparent;
+      border: 0;
+      margin-top: 6rem;
+      cursor: pointer;
+    }
   }
 }

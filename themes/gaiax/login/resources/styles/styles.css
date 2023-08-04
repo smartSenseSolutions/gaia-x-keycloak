@@ -328,12 +328,13 @@ a {
     left: 15rem; }
 
 .layout-main__bottom {
-  background: linear-gradient(311deg, #46DAFF 0%, #000094 50%, #B900FF 100%);
+  background: linear-gradient(311deg, #46daff 0%, #000094 50%, #b900ff 100%);
   height: calc(100vh - 36rem);
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  padding: 8rem 10% 1rem 10%; }
   .layout-main__bottom::before {
-    content: '';
+    content: "";
     background-image: url("../images/line.png");
     background-repeat: repeat-y;
     width: 100%;
@@ -341,41 +342,95 @@ a {
     left: 0;
     z-index: 1;
     position: absolute; }
+  .layout-main__bottom .steper-container {
+    margin-bottom: 7rem; }
+    .layout-main__bottom .steper-container ul {
+      display: flex; }
+      .layout-main__bottom .steper-container ul li {
+        list-style-type: none;
+        position: relative;
+        width: 48rem; }
+        .layout-main__bottom .steper-container ul li::before {
+          content: 'Step 2';
+          position: absolute;
+          color: #ececec;
+          left: -0.1rem;
+          font-size: 2rem;
+          font-weight: 600;
+          line-height: normal;
+          top: 3.8rem; }
+        .layout-main__bottom .steper-container ul li::after {
+          content: '';
+          position: absolute;
+          border: 1px solid #d9dada;
+          top: 1.4rem;
+          width: 90%;
+          left: 3.7rem; }
+        .layout-main__bottom .steper-container ul li:first-child::before {
+          content: 'Step 1'; }
+        .layout-main__bottom .steper-container ul li:last-child::before {
+          content: 'Step 3'; }
+        .layout-main__bottom .steper-container ul li:last-child::after {
+          content: none; }
+  .layout-main__bottom .cards-container {
+    display: flex;
+    gap: 4.7rem; }
+    .layout-main__bottom .cards-container .card-layout {
+      width: 42rem;
+      height: 26rem;
+      background-color: #fff;
+      border-radius: 0.8rem;
+      box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.15);
+      padding: 4rem 5rem; }
+      .layout-main__bottom .cards-container .card-layout h3,
+      .layout-main__bottom .cards-container .card-layout h1 {
+        color: #000;
+        font-size: 2.4rem;
+        font-weight: 600;
+        line-height: normal;
+        margin-bottom: 3rem; }
+      .layout-main__bottom .cards-container .card-layout p {
+        color: #000;
+        font-size: 1.8rem;
+        font-weight: 300;
+        line-height: normal; }
+      .layout-main__bottom .cards-container .card-layout .proceed-link {
+        text-align: center;
+        margin-top: 5rem; }
+        .layout-main__bottom .cards-container .card-layout .proceed-link a {
+          display: inline-block;
+          color: #465aff;
+          font-size: 1.8rem;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          text-align: center; }
 
 .template-header {
   position: relative;
   z-index: 99; }
 
-.info-section,
-.register-step-one {
-  border-radius: 0.8rem;
-  background: #fff;
-  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.15);
-  width: 42rem;
-  padding: 4rem 5rem; }
-  .info-section h3,
-  .register-step-one h3 {
-    color: #000;
-    font-size: 2rem;
-    font-weight: 600;
-    line-height: normal;
-    margin-bottom: 3rem; }
-  .info-section p,
-  .register-step-one p {
-    color: #000;
-    font-size: 1.8rem;
-    font-weight: 300;
-    line-height: normal; }
-  .info-section .proceed-link,
-  .register-step-one .proceed-link {
-    text-align: center;
-    margin-top: 5rem; }
-    .info-section .proceed-link a,
-    .register-step-one .proceed-link a {
-      display: inline-block;
-      color: #465aff;
+.webauthn-register h1 {
+  text-align: center; }
+
+.webauthn-register #kc-content-wrapper {
+  text-align: center; }
+  .webauthn-register #kc-content-wrapper form {
+    text-align: left; }
+    .webauthn-register #kc-content-wrapper form .checkbox label {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      color: #000;
       font-size: 1.8rem;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-      text-align: center; }
+      font-weight: 300;
+      line-height: normal; }
+  .webauthn-register #kc-content-wrapper #registerWebAuthn {
+    color: #465aff;
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-align: center;
+    background-color: transparent;
+    border: 0;
+    margin-top: 6rem;
+    cursor: pointer; }
