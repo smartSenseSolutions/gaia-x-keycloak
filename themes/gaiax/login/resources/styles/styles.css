@@ -338,10 +338,11 @@ a {
     background-image: url("../images/line.png");
     background-repeat: repeat-y;
     width: 100%;
-    height: 100%;
+    height: 25%;
     left: 0;
     z-index: 1;
-    position: absolute; }
+    position: absolute;
+    bottom: 0; }
   .layout-main__bottom .steper-container {
     margin-bottom: 7rem; }
     .layout-main__bottom .steper-container ul {
