@@ -55,7 +55,7 @@
                     <h3>${kcSanitize(msg("requiredAction.webauthn-register-passwordless"))?no_esc}</h3>
                     <p>${kcSanitize(msg("requiredAction.webauthn-register-passwordless-content"))?no_esc}</p>
                     <div class="proceed-link">
-                        <a href="${actionUri}">${kcSanitize(msg("proceedWithAction"))?no_esc}</a>
+                        <#--  <a href="${actionUri}">${kcSanitize(msg("proceedWithAction"))?no_esc}</a>  -->
                     </div>
                   </div>
 
