@@ -1,0 +1,43 @@
+.layout-main {
+    &__top {
+        width: 100%;
+        height: 36rem;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 4.5rem;
+        
+        h3 {
+            color: $blue;
+            font-size: 4rem;
+            font-weight: 600;
+            line-height: normal;
+            position: relative;
+        top: 8rem;
+        left: 15rem;
+
+        }
+
+        img {
+
+        }
+    }
+
+    &__bottom {
+        background: linear-gradient(311deg, #46DAFF 0%, #000094 50%, #B900FF 100%);
+        height: calc(100vh - 36rem);
+        position: relative;
+        overflow: hidden;
+        
+        &::before {
+            content: '';
+            background-image: url('../images/line.png');
+            background-repeat: repeat-y;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            z-index: 1;
+            position: absolute;
+        }
+    }
+}
