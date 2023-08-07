@@ -71,7 +71,7 @@
                     <p>Unlock <br/> by completing the steps</p>
                 </div>
 
-            <#elseif (client.baseUrl)?has_content>
+            <#else>
                 <div class="card-layout">
                     <h1>Webauthn Register Passwordless</h1>
                     <p>Please start the webauthn registeration process by clicking on the Proceed button </p>
