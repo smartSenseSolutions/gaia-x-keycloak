@@ -90,10 +90,12 @@
 
                 <div class="card-layout">
                     <h1>Congratulations</h1>
-                    <p>Your account has been created successfully. You are now a member of GaiaX Lorem ipsum</p>
-                    <div class="proceed-link">
-                        <a href="${client.baseUrl}">${kcSanitize(msg("signIn"))?no_esc}</a>
-                    </div>
+                    <p>Your account has been created successfully. You are now a member of GaiaX!</p>
+                    <#if pageRedirectUri?has_content>
+                        <div class="proceed-link">
+                            <p><a href="${pageRedirectUri}">${kcSanitize(msg("signIn"))?no_esc}</a></p>
+                        </div>
+                    </#if>
                 </div>
             </#if>
         </div>
