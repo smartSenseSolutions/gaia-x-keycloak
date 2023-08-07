@@ -24,29 +24,35 @@
 
         <div class="cards-container">
             <div class="card-layout">
-                <@layout.registrationLayout displayMessage=false; section>
-                    <#if section = "header">
-                        <#if messageHeader??>
-                        ${messageHeader}
-                        <#else>
-                        ${message.summary}
-                        </#if>
-                    <#elseif section = "form">
-                    <div id="kc-info-message info-section">
-                        <p class="instruction">${message.summary}<#if requiredActions??><#list requiredActions>: <b><#items as reqActionItem>${kcSanitize(msg("requiredAction.${reqActionItem}"))?no_esc}<#sep>, </#items></b></#list><#else></#if></p>
-                        <#if skipLink??>
-                        <#else>
-                            <#if pageRedirectUri?has_content>
-                                <p><a href="${pageRedirectUri}">${kcSanitize(msg("backToApplication"))?no_esc}</a></p>
-                            <#elseif actionUri?has_content>
-                            <p class="proceed-link"><a href="${actionUri}">${kcSanitize(msg("proceedWithAction"))?no_esc}</a></p>
-                            <#elseif (client.baseUrl)?has_content>
-                                <p><a href="${client.baseUrl}">${kcSanitize(msg("backToApplication"))?no_esc}</a></p>
+                <! –– first screen ––>
+                <#if actionUri?has_content>
+                    <@layout.registrationLayout displayMessage=false; section>
+                        <#if section = "header">
+                            <#if messageHeader??>
+                            ${messageHeader}
+                            <#else>
+                            ${message.summary}
                             </#if>
+                        <#elseif section = "form">
+                        <div id="kc-info-message info-section">
+                            <p class="instruction">${message.summary}<#if requiredActions??><#list requiredActions>: <b><#items as reqActionItem>${kcSanitize(msg("requiredAction.${reqActionItem}"))?no_esc}<#sep>, </#items></b></#list><#else></#if></p>
+                            <#if skipLink??>
+                            <#else>
+                                <#if pageRedirectUri?has_content>
+                                    <p><a href="${pageRedirectUri}">${kcSanitize(msg("backToApplication"))?no_esc}</a></p>
+                                <#elseif actionUri?has_content>
+                                <p class="proceed-link"><a href="${actionUri}">${kcSanitize(msg("proceedWithAction"))?no_esc}</a></p>
+                                <#elseif (client.baseUrl)?has_content>
+                                    <p><a href="${client.baseUrl}">${kcSanitize(msg("backToApplication"))?no_esc}</a></p>
+                                </#if>
+                            </#if>
+                        </div>
                         </#if>
-                    </div>
-                    </#if>
-                </@layout.registrationLayout>
+                    </@layout.registrationLayout>
+                <! –– third screen ––>
+                <#elseif (client.baseUrl)?has_content>
+                    <p><a href="${client.baseUrl}">${kcSanitize(msg("backToApplication"))?no_esc}</a></p>
+                </#if>
             </div>
 
             <div class="card-layout lock-screen">
