@@ -3,7 +3,7 @@
 
 <div class="webauthn-register">
     <div class="layout-main__top">
-        <h3>Security key registration</h3>
+        <h3>Let’s get you started <br /> on your Gaia-X experience! </h3>
         <img src="${url.resourcesPath}/images/logo.png" alt="" />
     </div>
 

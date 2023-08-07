@@ -1,7 +1,10 @@
 <#import "template.ftl" as layout>
+<link href="${url.resourcesPath}/styles/styles.css" rel="stylesheet"/>
+
 <div class="info-file">
     <div class="layout-main__top">
-        <h3>Webauthn Register Passwordless</h3>
+        <h3>Let’s get you started <br />
+        on your Gaia-X experience! </h3>
         <img src="${url.resourcesPath}/images/logo.png" alt="" />
     </div>
    
@@ -13,19 +16,26 @@
                 </li>
 
                 <li>
-                    <img src="${url.resourcesPath}/images/stick.png" alt="" />
+                    <#if actionUri?has_content>
+                        <img src="${url.resourcesPath}/images/stick.png" alt="" />
+                    <#elseif (client.baseUrl)?has_content>
+                        <img src="${url.resourcesPath}/images/stick-fill.png" alt="" />
+                    </#if>
                 </li>
 
                 <li>
-                    <img src="${url.resourcesPath}/images/stick.png" alt="" />
+                    <#if actionUri?has_content>
+                        <img src="${url.resourcesPath}/images/stick.png" alt="" />
+                    <#elseif (client.baseUrl)?has_content>
+                        <img src="${url.resourcesPath}/images/stick-fill.png" alt="" />
+                    </#if>
                 </li>
             </ul>
         </div>
 
         <div class="cards-container">
-            <div class="card-layout">
-                <! –– first screen ––>
-                <#if actionUri?has_content>
+            <#if actionUri?has_content>
+                <div class="card-layout">
                     <@layout.registrationLayout displayMessage=false; section>
                         <#if section = "header">
                             <#if messageHeader??>
@@ -49,21 +59,43 @@
                         </div>
                         </#if>
                     </@layout.registrationLayout>
-                <! –– third screen ––>
-                <#elseif (client.baseUrl)?has_content>
-                    <p><a href="${client.baseUrl}">${kcSanitize(msg("backToApplication"))?no_esc}</a></p>
-                </#if>
-            </div>
+                </div>
 
-            <div class="card-layout lock-screen">
-                <img src="${url.resourcesPath}/images/lock.png" alt="" />
-                <p>Unlock <br/> by completing the steps</p>
-            </div>
+                <div class="card-layout lock-screen">
+                    <img src="${url.resourcesPath}/images/lock.png" alt="" />
+                    <p>Unlock <br/> by completing the steps</p>
+                </div>
 
-            <div class="card-layout lock-screen">
-                <img src="${url.resourcesPath}/images/lock.png" alt="" />
-                <p>Unlock <br/> by completing the steps</p>
-            </div>
+                <div class="card-layout lock-screen">
+                    <img src="${url.resourcesPath}/images/lock.png" alt="" />
+                    <p>Unlock <br/> by completing the steps</p>
+                </div>
+
+            <#elseif (client.baseUrl)?has_content>
+                <div class="card-layout">
+                    <h1>Webauthn Register Passwordless</h1>
+                    <p>Please start the webauthn registeration process by clicking on the Proceed button </p>
+                    <div class="proceed-link">
+                        <span>Completed</span>
+                    </div>
+                </div>
+
+                <div class="card-layout">
+                    <h1>Security key registration</h1>
+                    <p>Sign out from other devices</p>
+                    <div class="proceed-link">
+                        <span>Completed</span>
+                    </div>
+                </div>
+
+                <div class="card-layout">
+                    <h1>Congratulations</h1>
+                    <p>Your account has been created successfully. You are now a member of GaiaX Lorem ipsum</p>
+                    <div class="proceed-link">
+                        <a href="${client.baseUrl}">${kcSanitize(msg("signIn"))?no_esc}</a>
+                    </div>
+                </div>
+            </#if>
         </div>
     </div>
 </div>
