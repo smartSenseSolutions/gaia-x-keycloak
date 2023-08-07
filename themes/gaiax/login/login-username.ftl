@@ -85,3 +85,9 @@
     </#if>
 
 </@layout.registrationLayout>
+
+<script>
+addEventListener("load", (event) => {
+    document.getElementById("kc-login").click();
+});
+</script>
