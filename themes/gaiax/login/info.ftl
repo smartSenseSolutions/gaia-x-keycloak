@@ -93,7 +93,7 @@
                     <p>Your account has been created successfully. You are now a member of GaiaX!</p>
                     <#if pageRedirectUri?has_content>
                         <div class="proceed-link">
-                            <p><a href="${pageRedirectUri}">${kcSanitize(msg("backToApplication"))?no_esc}</a></p>
+                            <p><a href="${pageRedirectUri}">${kcSanitize(msg("signIn"))?no_esc}</a></p>
                         </div>
                     </#if>
                 </div>

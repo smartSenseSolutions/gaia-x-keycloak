@@ -19,7 +19,7 @@
           display: flex;
           align-items: center;
           gap: 0.8rem;
-          color: #000;
+          color: $black;
           font-size: 1.8rem;
           font-weight: 300;
           line-height: normal;
@@ -28,7 +28,7 @@
     }
 
     #registerWebAuthn {
-      color: #465aff;
+      color: $mediumBlue;
       font-size: 1.8rem;
       font-weight: 400;
       text-align: center;
