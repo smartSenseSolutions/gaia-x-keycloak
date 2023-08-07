@@ -1,0 +1,66 @@
+.webauthn-authenticate {
+  .layout-main {
+    &__bottom {
+      .cards-container {
+        .card-layout {
+          &__header {
+            border-radius: 1.4rem 1.4rem 0rem 0rem;
+            background: linear-gradient(
+              311deg,
+              #000094 0%,
+              #000094 58.67%,
+              #b900ff 100%
+            );
+            padding: 2.7rem;
+            h2 {
+              color: $white;
+              font-size: 2.4rem;
+              font-weight: 600;
+            }
+          }
+          position: absolute;
+          top: -4rem;
+          right: 28rem;
+          padding: 0;
+          width: 48rem;
+          height: 28rem;
+
+          #kc-username {
+            margin: 3rem 0;
+            text-align: center;
+
+            label#kc-attempted-username {
+              font-size: 1.8rem;
+              margin-bottom: 2rem;
+              display: block;
+            }
+
+            #reset-login {
+              font-size: 1.8rem;
+              display: inline-block;
+            }
+          }
+
+          #kc-form-buttons {
+            text-align: center;
+
+            #authenticateWebAuthnButton {
+              width: 30rem;
+              height: 5.2rem;
+              justify-content: center;
+              align-items: center;
+              flex-shrink: 0;
+              background-color: #465aff;
+              border: 0;
+              color: $white;
+              text-align: center;
+              font-size: 2rem;
+              font-weight: 600;
+              border-radius: 0.8rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
