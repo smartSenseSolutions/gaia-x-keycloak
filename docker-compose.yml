@@ -46,7 +46,8 @@ services:
     container_name: local_keycloak
     volumes:
       - keycloak-data:/opt/keycloak/data/
-      - /home/neha/Documents/projects/Gaia-X/gaia-x-keycloak/themes/gaiax:/opt/keycloak/themes/gaiax
+      - /home/hasmukh/projects/keycloak/gaia-x-keycloak/themes/gaiax:/opt/keycloak/themes/gaiax
+#      - /home/neha/Documents/projects/Gaia-X/gaia-x-keycloak/themes/gaiax:/opt/keycloak/themes/gaiax
     environment:
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
