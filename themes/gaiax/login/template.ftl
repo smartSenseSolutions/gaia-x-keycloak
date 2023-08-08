@@ -87,7 +87,7 @@
                                         <#nested "show-username">
                                         <div id="kc-username" class="${properties.kcFormGroupClass!}">
                                             <label id="kc-attempted-username">${auth.attemptedUsername}</label>
-                                            <a id="reset-login" href="${url.loginRestartFlowUrl}" aria-label="${msg("restartLoginTooltip")}">
+                                            <a id="reset-login" href="${properties.restartLoginUrl}" aria-label="${msg("restartLoginTooltip")}">
                                                 <div class="kc-login-tooltip">
                                                     <i class="${properties.kcResetFlowIcon!}"></i>
                                                     <span class="kc-tooltip-text">${msg("restartLoginTooltip")}</span>
@@ -100,7 +100,7 @@
                                 <#nested "show-username">
                                 <div id="kc-username" class="${properties.kcFormGroupClass!}">
                                     <label id="kc-attempted-username">${auth.attemptedUsername}</label>
-                                    <a id="reset-login" href="${url.loginRestartFlowUrl}" aria-label="${msg("restartLoginTooltip")}">
+                                    <a id="reset-login" href="${properties.restartLoginUrl}" aria-label="${msg("restartLoginTooltip")}">                                        <div class="kc-login-tooltip">
                                         <div class="kc-login-tooltip">
                                             <i class="${properties.kcResetFlowIcon!}"></i>
                                             <span class="kc-tooltip-text">${msg("restartLoginTooltip")}</span>

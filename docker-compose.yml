@@ -4,6 +4,8 @@ services:
   postgres:
     image: postgres:15.2
     restart: unless-stopped
+    ports:
+      - 5432:5432
     volumes:
       - db-data:/var/lib/postgresql15/data
     environment:
@@ -13,16 +15,16 @@ services:
     networks:
       - local-keycloak
 
-  mailhog-keycloak:
-    image: mailhog/mailhog
-    container_name: mailhog
-    logging:
-      driver: "none"
-    ports:
-      - 1025:1025 # smtp server
-      - 8025:8025 # web ui
-    networks:
-      - local-keycloak
+#  mailhog-keycloak:
+#    image: mailhog/mailhog
+#    container_name: mailhog
+#    logging:
+#      driver: "none"
+#    ports:
+#      - 1025:1025 # smtp server
+#      - 8025:8025 # web ui
+#    networks:
+#      - local-keycloak
 
   keycloak:
     healthcheck:
@@ -45,6 +47,7 @@ services:
     volumes:
       - keycloak-data:/opt/keycloak/data/
       - /home/hasmukh/projects/keycloak/gaia-x-keycloak/themes/gaiax:/opt/keycloak/themes/gaiax
+#      - /home/neha/Documents/projects/Gaia-X/gaia-x-keycloak/themes/gaiax:/opt/keycloak/themes/gaiax
     environment:
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
@@ -53,6 +56,7 @@ services:
       DB_DATABASE: keycloak
       DB_USER: admin
       DB_PASSWORD: admin
+      RESTART_LOGIN_URL: https://wizard.smart-x.smartsenselabs.com/
     image: quay.io/keycloak/keycloak:22.0.1
     entrypoint: ["/opt/keycloak/bin/kc.sh", "start-dev"]
     ports:
