@@ -538,7 +538,8 @@ a {
       font-weight: 600;
       border-radius: 0.8rem;
       padding: 1rem 2rem;
-      display: inline-block; }
+      display: inline-block;
+      cursor: pointer; }
   .webauthn-authenticate .layout-main__bottom .cards-container .card-layout #kc-content-wrapper {
     padding-bottom: 2rem; }
     .webauthn-authenticate .layout-main__bottom .cards-container .card-layout #kc-content-wrapper .alert-error {
