@@ -18,7 +18,7 @@
                 <li>
                     <#if actionUri?has_content>
                         <img src="${url.resourcesPath}/images/stick.png" alt="" />
-                    <#elseif (client.baseUrl)?has_content>
+                    <#else>
                         <img src="${url.resourcesPath}/images/stick-fill.png" alt="" />
                     </#if>
                 </li>
@@ -26,7 +26,7 @@
                 <li>
                     <#if actionUri?has_content>
                         <img src="${url.resourcesPath}/images/stick.png" alt="" />
-                    <#elseif (client.baseUrl)?has_content>
+                    <#else>
                         <img src="${url.resourcesPath}/images/stick-fill.png" alt="" />
                     </#if>
                 </li>
