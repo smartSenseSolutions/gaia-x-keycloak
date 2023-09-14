@@ -42,6 +42,10 @@
           min-height: 28rem;
           height: auto;
 
+          @media screen and (min-width: 1200px) and (max-width: 1440px) {
+            top: -5rem;
+          }
+
           #kc-form-login {
             display: flex;
             flex-direction: column;
