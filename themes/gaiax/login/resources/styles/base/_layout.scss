@@ -1,0 +1,176 @@
+.layout-main {
+  &__top {
+    width: 100%;
+    height: 30rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 4.5rem;
+
+    @media screen and (min-width: 1200px) and (max-width: 1440px) {
+      height: 25rem;
+    }
+
+    h3 {
+      color: $blue;
+      font-size: 4rem;
+      font-weight: 600;
+      line-height: normal;
+      position: relative;
+      top: 8rem;
+      left: 15rem;
+
+      @media screen and (min-width: 1200px) and (max-width: 1440px) {
+        left: 3%;
+        top: 5rem;
+      }
+    }
+
+    img {
+    }
+  }
+
+  &__bottom {
+    background: linear-gradient(311deg, $turquoise 0%, $blue 50%, $purple 100%);
+    height: calc(100vh - 30rem);
+    position: relative;
+    // overflow: hidden;
+    padding: 8rem 10% 1rem 10%;
+
+    @media screen and (min-width: 1200px) and (max-width: 1440px) {
+      height: calc(100vh - 25rem);
+      padding: 8rem 5% 1rem 5%;
+    }
+
+    &::before {
+      content: "";
+      background-image: url("../images/line.png");
+      background-repeat: repeat-y;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      z-index: 1;
+      position: absolute;
+      bottom: 0;
+    }
+
+    .steper-container {
+      margin-bottom: 7rem;
+
+      ul {
+        display: flex;
+
+        li {
+          list-style-type: none;
+          position: relative;
+          width: 48rem;
+
+          &::before {
+            content: "Step 2";
+            position: absolute;
+            color: $gray4;
+            left: -0.1rem;
+            font-size: 2rem;
+            font-weight: 600;
+            line-height: normal;
+            top: 3.8rem;
+          }
+
+          &::after {
+            content: "";
+            position: absolute;
+            border: 1px solid $gray3;
+            top: 1.4rem;
+            width: 90%;
+            left: 3.7rem;
+          }
+
+          &:first-child {
+            &::before {
+              content: "Step 1";
+            }
+          }
+
+          &:last-child {
+            &::before {
+              content: "Step 3";
+            }
+            &::after {
+              content: none;
+            }
+          }
+        }
+      }
+    }
+
+    .cards-container {
+      display: flex;
+      gap: 4.7rem;
+
+      .card-layout {
+        width: 42rem;
+        height: 26rem;
+        background-color: $white;
+        border-radius: 1.4rem;
+        box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.15);
+        padding: 4rem 3.7rem;
+
+        @media screen and (min-width: 1200px) and (max-width: 1440px) {
+          height: 27rem;
+          padding: 2rem 2.7rem;
+        }
+
+        h3,
+        h1 {
+          color: $black;
+          font-size: 2.4rem;
+          font-weight: 600;
+          line-height: normal;
+          margin-bottom: 3rem;
+        }
+
+        p {
+          color: $black;
+          font-size: 1.8rem;
+          font-weight: 300;
+          line-height: normal;
+        }
+
+        .proceed-link {
+          text-align: center;
+          margin-top: 5rem;
+          a,
+          span {
+            display: inline-block;
+            color: $mediumBlue;
+            font-size: 1.8rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            text-align: center;
+            position: relative;
+            z-index: 999;
+          }
+
+          span {
+            color: #63be38;
+          }
+        }
+      }
+
+      .lock-screen {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2.7rem;
+
+        p {
+          font-size: 2rem;
+          font-weight: 600;
+          width: 20.5rem;
+        }
+      }
+    }
+  }
+}

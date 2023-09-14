@@ -1,0 +1,563 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
+/** 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  font-size: 10px; }
+  @media screen and (min-width: 1200px) and (max-width: 1440px) {
+    html {
+      font-size: 9px; } }
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+  margin: 0;
+  background-color: #ececec;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 400;
+  font-size: 1.4rem; }
+
+::-webkit-scrollbar {
+  width: 0.7rem;
+  height: 0.7rem; }
+
+::-webkit-scrollbar-track {
+  background: transparent; }
+
+::-webkit-scrollbar-thumb {
+  background: #223039;
+  width: 0.5rem;
+  border-radius: 100px; }
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Titillium Web", sans-serif; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */ }
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */ }
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: 700; }
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sub {
+  bottom: -0.25em; }
+
+sup {
+  top: -0.5em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+  border-style: none; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */ }
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible; }
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none; }
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button; }
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner {
+  border-style: none;
+  padding: 0; }
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type='button']:-moz-focusring,
+[type='reset']:-moz-focusring,
+[type='submit']:-moz-focusring {
+  outline: 1px dotted ButtonText; }
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em; }
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */ }
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline; }
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+  overflow: auto;
+  resize: none !important; }
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type='checkbox'],
+[type='radio'] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type='search'] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */ }
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type='search']::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */ }
+
+* {
+  box-sizing: border-box;
+  outline: none;
+  padding: 0;
+  margin: 0; }
+
+.text-center {
+  text-align: center !important; }
+
+.text-left {
+  text-align: left; }
+
+.text-right {
+  text-align: right; }
+
+.cursor-pointer {
+  cursor: pointer; }
+
+.on-right {
+  float: right; }
+
+.on-left {
+  float: left; }
+
+a {
+  text-decoration: none; }
+
+.d-none {
+  display: none; }
+
+.cursor-not-allowed {
+  cursor: not-allowed; }
+
+.layout-main__top {
+  width: 100%;
+  height: 30rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 4.5rem; }
+  @media screen and (min-width: 1200px) and (max-width: 1440px) {
+    .layout-main__top {
+      height: 25rem; } }
+  .layout-main__top h3 {
+    color: #000094;
+    font-size: 4rem;
+    font-weight: 600;
+    line-height: normal;
+    position: relative;
+    top: 8rem;
+    left: 15rem; }
+    @media screen and (min-width: 1200px) and (max-width: 1440px) {
+      .layout-main__top h3 {
+        left: 3%;
+        top: 5rem; } }
+
+.layout-main__bottom {
+  background: linear-gradient(311deg, #46daff 0%, #000094 50%, #b900ff 100%);
+  height: calc(100vh - 30rem);
+  position: relative;
+  padding: 8rem 10% 1rem 10%; }
+  @media screen and (min-width: 1200px) and (max-width: 1440px) {
+    .layout-main__bottom {
+      height: calc(100vh - 25rem);
+      padding: 8rem 5% 1rem 5%; } }
+  .layout-main__bottom::before {
+    content: "";
+    background-image: url("../images/line.png");
+    background-repeat: repeat-y;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    z-index: 1;
+    position: absolute;
+    bottom: 0; }
+  .layout-main__bottom .steper-container {
+    margin-bottom: 7rem; }
+    .layout-main__bottom .steper-container ul {
+      display: flex; }
+      .layout-main__bottom .steper-container ul li {
+        list-style-type: none;
+        position: relative;
+        width: 48rem; }
+        .layout-main__bottom .steper-container ul li::before {
+          content: "Step 2";
+          position: absolute;
+          color: #ececec;
+          left: -0.1rem;
+          font-size: 2rem;
+          font-weight: 600;
+          line-height: normal;
+          top: 3.8rem; }
+        .layout-main__bottom .steper-container ul li::after {
+          content: "";
+          position: absolute;
+          border: 1px solid #d9dada;
+          top: 1.4rem;
+          width: 90%;
+          left: 3.7rem; }
+        .layout-main__bottom .steper-container ul li:first-child::before {
+          content: "Step 1"; }
+        .layout-main__bottom .steper-container ul li:last-child::before {
+          content: "Step 3"; }
+        .layout-main__bottom .steper-container ul li:last-child::after {
+          content: none; }
+  .layout-main__bottom .cards-container {
+    display: flex;
+    gap: 4.7rem; }
+    .layout-main__bottom .cards-container .card-layout {
+      width: 42rem;
+      height: 26rem;
+      background-color: #fff;
+      border-radius: 1.4rem;
+      box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.15);
+      padding: 4rem 3.7rem; }
+      @media screen and (min-width: 1200px) and (max-width: 1440px) {
+        .layout-main__bottom .cards-container .card-layout {
+          height: 27rem;
+          padding: 2rem 2.7rem; } }
+      .layout-main__bottom .cards-container .card-layout h3,
+      .layout-main__bottom .cards-container .card-layout h1 {
+        color: #000;
+        font-size: 2.4rem;
+        font-weight: 600;
+        line-height: normal;
+        margin-bottom: 3rem; }
+      .layout-main__bottom .cards-container .card-layout p {
+        color: #000;
+        font-size: 1.8rem;
+        font-weight: 300;
+        line-height: normal; }
+      .layout-main__bottom .cards-container .card-layout .proceed-link {
+        text-align: center;
+        margin-top: 5rem; }
+        .layout-main__bottom .cards-container .card-layout .proceed-link a,
+        .layout-main__bottom .cards-container .card-layout .proceed-link span {
+          display: inline-block;
+          color: #465aff;
+          font-size: 1.8rem;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          text-align: center;
+          position: relative;
+          z-index: 999; }
+        .layout-main__bottom .cards-container .card-layout .proceed-link span {
+          color: #63be38; }
+    .layout-main__bottom .cards-container .lock-screen {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2.7rem; }
+      .layout-main__bottom .cards-container .lock-screen p {
+        font-size: 2rem;
+        font-weight: 600;
+        width: 20.5rem; }
+
+.template-header {
+  position: relative;
+  z-index: 99; }
+
+.webauthn-register h1 {
+  text-align: center; }
+
+.webauthn-register #kc-content-wrapper {
+  text-align: center; }
+  .webauthn-register #kc-content-wrapper form {
+    text-align: left; }
+    .webauthn-register #kc-content-wrapper form .checkbox label {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      color: #000;
+      font-size: 1.8rem;
+      font-weight: 300;
+      line-height: normal; }
+  .webauthn-register #kc-content-wrapper #registerWebAuthn {
+    color: #465aff;
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-align: center;
+    background-color: transparent;
+    border: 0;
+    margin-top: 6rem;
+    cursor: pointer; }
+
+.webauthn-authenticate .layout-main__bottom .cards-container .card-layout {
+  position: absolute;
+  top: -4rem;
+  right: 28rem;
+  padding: 0;
+  width: 48rem;
+  min-height: 28rem;
+  height: auto; }
+  .webauthn-authenticate .layout-main__bottom .cards-container .card-layout__header {
+    border-radius: 1.4rem 1.4rem 0rem 0rem;
+    background: linear-gradient(311deg, #000094 0%, #000094 58.67%, #b900ff 100%);
+    padding: 2.7rem;
+    position: relative; }
+    .webauthn-authenticate .layout-main__bottom .cards-container .card-layout__header h2 {
+      color: #fff;
+      font-size: 2.4rem;
+      font-weight: 600;
+      position: relative;
+      z-index: 99; }
+    .webauthn-authenticate .layout-main__bottom .cards-container .card-layout__header::before {
+      content: '';
+      background-image: url("../images/line1.png");
+      position: absolute;
+      width: 47%;
+      height: 77%;
+      background-repeat: no-repeat;
+      z-index: 1;
+      top: 1.1rem;
+      right: 3rem; }
+  @media screen and (min-width: 1200px) and (max-width: 1440px) {
+    .webauthn-authenticate .layout-main__bottom .cards-container .card-layout {
+      top: -5rem; } }
+  .webauthn-authenticate .layout-main__bottom .cards-container .card-layout #kc-form-login {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 2rem; }
+    .webauthn-authenticate .layout-main__bottom .cards-container .card-layout #kc-form-login #username {
+      padding: 1rem;
+      border-radius: 0.5rem;
+      outline: 0;
+      border: 1px solid #b1b2b2;
+      width: 30rem;
+      margin-top: 0.5rem; }
+    .webauthn-authenticate .layout-main__bottom .cards-container .card-layout #kc-form-login #input-error-username {
+      display: block;
+      color: red; }
+  .webauthn-authenticate .layout-main__bottom .cards-container .card-layout #kc-page-title {
+    padding-top: 2rem;
+    text-align: center; }
+  .webauthn-authenticate .layout-main__bottom .cards-container .card-layout #kc-username {
+    margin: 3rem 0;
+    text-align: center; }
+    .webauthn-authenticate .layout-main__bottom .cards-container .card-layout #kc-username label#kc-attempted-username {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      display: block; }
+    .webauthn-authenticate .layout-main__bottom .cards-container .card-layout #kc-username #reset-login {
+      font-size: 1.8rem;
+      display: inline-block; }
+  .webauthn-authenticate .layout-main__bottom .cards-container .card-layout #kc-form-buttons {
+    text-align: center; }
+    .webauthn-authenticate .layout-main__bottom .cards-container .card-layout #kc-form-buttons #authenticateWebAuthnButton,
+    .webauthn-authenticate .layout-main__bottom .cards-container .card-layout #kc-form-buttons #kc-login, .webauthn-authenticate .layout-main__bottom .cards-container .card-layout #kc-form-buttons #kc-try-again, .webauthn-authenticate .layout-main__bottom .cards-container .card-layout #kc-form-buttons #backToApplication {
+      min-width: 20rem;
+      height: 4.2rem;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
+      background-color: #465aff;
+      border: 0;
+      color: #fff;
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: 600;
+      border-radius: 0.8rem;
+      padding: 1rem 2rem;
+      display: inline-block;
+      cursor: pointer; }
+  .webauthn-authenticate .layout-main__bottom .cards-container .card-layout #kc-content-wrapper {
+    padding-bottom: 2rem; }
+    .webauthn-authenticate .layout-main__bottom .cards-container .card-layout #kc-content-wrapper .alert-error {
+      text-align: center;
+      color: red;
+      font-size: 1.6rem;
+      margin-bottom: 2rem; }
+    .webauthn-authenticate .layout-main__bottom .cards-container .card-layout #kc-content-wrapper #kc-error-message .instruction {
+      padding: 0 38px;
+      color: red;
+      margin-bottom: 2rem; }

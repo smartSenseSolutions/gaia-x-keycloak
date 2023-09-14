@@ -1,0 +1,41 @@
+.template-header {
+  position: relative;
+  z-index: 99;
+}
+
+.webauthn-register {
+  h1 {
+    text-align: center;
+  }
+
+  #kc-content-wrapper {
+    text-align: center;
+
+    form {
+      text-align: left;
+
+      .checkbox {
+        label {
+          display: flex;
+          align-items: center;
+          gap: 0.8rem;
+          color: $black;
+          font-size: 1.8rem;
+          font-weight: 300;
+          line-height: normal;
+        }
+      }
+    }
+
+    #registerWebAuthn {
+      color: $mediumBlue;
+      font-size: 1.8rem;
+      font-weight: 400;
+      text-align: center;
+      background-color: transparent;
+      border: 0;
+      margin-top: 6rem;
+      cursor: pointer;
+    }
+  }
+}
