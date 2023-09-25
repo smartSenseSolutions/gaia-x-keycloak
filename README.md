@@ -16,16 +16,16 @@ docker-compose up
 - Now, create a new realm from the keycloak admin panel. We will use this realm in our Wizard application.
 - Next, in the 'Authentication' tab, create a copy of the 'browser' flow and customize the copy as shown below to set up
 sign in through webAuthn: \
-  <img src="./doc/webAuthn-browser.png" alt="webAuthn-browser.png" style="width:770px;height:620px"/>
+  <img src="./doc/webAuthn-browser.png" alt="webAuthn-browser.png"/>
 - To configure the email configuration, go to the 'Email' tab under 'Realm settings'. If mailhog server is being used, 
 the configuration look like below: \
-  <img src="./doc/mailhog-configuration.png" alt="mailhog-configuration.png" style="width:340px;height:500px"/>
+  <img src="./doc/mailhog-configuration.png" alt="mailhog-configuration.png"/>
 - Click on 'Test connection' to confirm that the provided values are correct.
 - Create a public client that will be used by frontend for signing in to the application. Go to the advanced tab to 
 override the browser flow to the one created in the previous step.
 - In the 'Client scopes' tab, create a new client scope. Create a new 'User Attribute' mapper in this. 
 This mapper will map user's ID in the Wizard application to their access token. \
-  <img src="./doc/user-attribute-mapper.png" alt="user-attribute-mapper.png" style="width:650px;height:550px"/>
+  <img src="./doc/user-attribute-mapper.png" alt="user-attribute-mapper.png"/>
 
 
 ## Configuring a confidential client for the Wizard application:
