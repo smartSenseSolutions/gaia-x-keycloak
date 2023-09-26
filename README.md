@@ -1,10 +1,13 @@
 # Keycloak server for Gaia-X Wizard application
 
 This project is used to set a custom Keycloak theme for the Wizard application. To provide a ready-to-use setup, 
-a docker compose file has been added which spins up the following services:
+a docker-compose file has been added which spins up the following services:
 - **Postgres:** To persist keycloak data
 - **Keycloak:** Main application to manage user authentication
 - **Mailhog:** SMTP server for test emails
+
+The docker-compose also imports a `gaiax` realm into Keycloak which contains authentication changes for webAuthn, clients, client role, mapper, etc.   
+
 
 ### Technologies, Frameworks and libs used
 

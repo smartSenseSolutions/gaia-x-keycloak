@@ -26,7 +26,7 @@ services:
 
   keycloak:
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://http://0.0.0.0:8080/auth/"]
+      test: [ "CMD", "curl", "-f", "http://http://0.0.0.0:8080/auth/" ]
       interval: 5s
       timeout: 2s
       retries: 15
@@ -45,18 +45,20 @@ services:
     volumes:
       - keycloak-data:/opt/keycloak/data/
       - ./themes/gaiax:/opt/keycloak/themes/gaiax
+      - ./import/:/opt/keycloak/data/import
     environment:
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
       DB_VENDOR: postgres
       DB_ADDR: postgres
-      DB_DATABASE: keycloak
+      DB_DATABASE: keycloak_2
       DB_USER: admin
       DB_PASSWORD: admin
       RESTART_LOGIN_URL: https://wizard.smart-x.smartsenselabs.com/
-      KC_LOG_LEVEL: DEBUG
+    #      KC_LOG_LEVEL: DEBUG
     image: quay.io/keycloak/keycloak:22.0.1
-    entrypoint: ["/opt/keycloak/bin/kc.sh", "start-dev"]
+    #    entrypoint: ["/opt/keycloak/bin/kc.sh", "start-dev"]
+    command: -v start-dev --import-realm
     ports:
       - "8080:8080"
     restart: unless-stopped
