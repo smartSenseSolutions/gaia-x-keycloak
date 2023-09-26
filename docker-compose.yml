@@ -4,8 +4,6 @@ services:
   postgres:
     image: postgres:15.2
     restart: unless-stopped
-    ports:
-      - 5432:5432
     volumes:
       - db-data:/var/lib/postgresql15/data
     environment:
@@ -15,20 +13,20 @@ services:
     networks:
       - local-keycloak
 
-#  mailhog-keycloak:
-#    image: mailhog/mailhog
-#    container_name: mailhog
-#    logging:
-#      driver: "none"
-#    ports:
-#      - 1025:1025 # smtp server
-#      - 8025:8025 # web ui
-#    networks:
-#      - local-keycloak
+  mailhog-keycloak:
+    image: mailhog/mailhog
+    container_name: mailhog
+    ports:
+      - 1025:1025 # smtp server
+      - 8025:8025 # web ui
+    logging:
+      driver: 'none'  # disable saving logs
+    networks:
+      - local-keycloak
 
   keycloak:
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://http://0.0.0.0:8080/auth/"]
+      test: [ "CMD", "curl", "-f", "http://http://0.0.0.0:8080/auth/" ]
       interval: 5s
       timeout: 2s
       retries: 15
@@ -46,19 +44,21 @@ services:
     container_name: local_keycloak
     volumes:
       - keycloak-data:/opt/keycloak/data/
-      - /home/hasmukh/projects/keycloak/gaia-x-keycloak/themes/gaiax:/opt/keycloak/themes/gaiax
-#      - /home/neha/Documents/projects/Gaia-X/gaia-x-keycloak/themes/gaiax:/opt/keycloak/themes/gaiax
+      - ./themes/gaiax:/opt/keycloak/themes/gaiax
+      - ./import/:/opt/keycloak/data/import
     environment:
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
       DB_VENDOR: postgres
       DB_ADDR: postgres
-      DB_DATABASE: keycloak
+      DB_DATABASE: keycloak_2
       DB_USER: admin
       DB_PASSWORD: admin
       RESTART_LOGIN_URL: https://wizard.smart-x.smartsenselabs.com/
+    #      KC_LOG_LEVEL: DEBUG
     image: quay.io/keycloak/keycloak:22.0.1
-    entrypoint: ["/opt/keycloak/bin/kc.sh", "start-dev"]
+    #    entrypoint: ["/opt/keycloak/bin/kc.sh", "start-dev"]
+    command: -v start-dev --import-realm
     ports:
       - "8080:8080"
     restart: unless-stopped
