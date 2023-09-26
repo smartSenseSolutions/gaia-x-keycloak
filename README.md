@@ -6,7 +6,14 @@ a docker compose file has been added which spins up the following services:
 - **Keycloak:** Main application to manage user authentication
 - **Mailhog:** SMTP server for test emails
 
-## Getting Started:
+### Technologies, Frameworks and libs used
+
+- Java 17
+- Postgres
+- CSS
+- Java Script
+
+### Getting Started:
 - To redirect users to Wizard's UI after they complete registering their WebAuthn device, 
 add the login URL as `RESTART_LOGIN_URL` in environment variable. 
 - To run the above-mentioned docker-compose, run the below command to deploy the services:
@@ -28,7 +35,7 @@ This mapper will map user's ID in the Wizard application to their access token. 
   <img src="./doc/user-attribute-mapper.png" alt="user-attribute-mapper.png"/>
 
 
-## Configuring a confidential client for the Wizard application:
+### Configuring a confidential client for the Wizard application:
 - Next, we will need to configure a private client that will manage users, send emails, and assign client role to 
 the users.
 - After providing a relevant client id to this client, enable client authentication and grant service account roles to 
