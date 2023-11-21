@@ -2,7 +2,7 @@
 <div class="webauthn-authenticate">
     <div class="layout-main__top">
         <h3>Failed to authenticate by the Security key.</h3>
-        <img style="opacity:0;" src="${url.resourcesPath}/images/logo.png" alt="" />
+        <img src="${url.resourcesPath}/images/logo.png" alt="" />
     </div>
 
     <div class="layout-main__bottom">
