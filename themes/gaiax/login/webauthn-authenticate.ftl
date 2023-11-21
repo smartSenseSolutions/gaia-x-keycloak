@@ -2,7 +2,7 @@
 <div class="webauthn-authenticate">
     <div class="layout-main__top">
         <h3>Passwordless Authentication</h3>
-        <img src="${url.resourcesPath}/images/logo.png" alt="" />
+        <img style="opacity:0;" src="${url.resourcesPath}/images/logo.png" alt="" />
     </div>
 
     <div class="layout-main__bottom">
